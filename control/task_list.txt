@@ -1,4 +1,5 @@
 ### Task List of Wing
 1. Update servo position - 10ms
-2. Button State - 50ms
+2. Button Read - 50ms
 3. White blink - 100ms
+4. 

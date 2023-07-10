@@ -15,6 +15,7 @@ private:
   int state;
   int button_pin;
   int long_hold;
+  int short_hold;
 
   int *RGB_pins;
   int *RGB_value;
@@ -43,6 +44,7 @@ public:
   void set_button_value();
   int get_button_value();
   int get_long_hold_time();
+  int get_short_hold_time();
   int get_state();
   void set_state(int);
 };

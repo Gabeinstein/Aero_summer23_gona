@@ -9,7 +9,8 @@ Wing::Wing(){
   servos = new Servo[3];
   RGB_pins = new int[3];
   RGB_value = new int[3];
-  long_hold = 2000;
+  long_hold = 1000;
+  short_hold = 500;
 }
 Wing::Wing(int _aleron_servo_pin, int _slat_servo_pin, int _flap_servo_pin){
   servo_pins = new int[3];
@@ -19,8 +20,9 @@ Wing::Wing(int _aleron_servo_pin, int _slat_servo_pin, int _flap_servo_pin){
   servos = new Servo[3];
   RGB_pins = new int[3];
   RGB_value = new int[3];
-  long_hold = 2000;
-  
+  long_hold = 1000;
+  short_hold = 500;
+
   servo_pins[0] = _aleron_servo_pin;
   servo_pins[1] = _slat_servo_pin;
   servo_pins[2] = _flap_servo_pin;
@@ -86,7 +88,6 @@ void Wing::RGB_print(int _r, int _g, int _b){
 //Button
 void Wing::set_button_pin(int _pin){
   button_pin = _pin;
-  
   pinMode(button_pin,INPUT);
 }
 void Wing::set_button_value(){
@@ -97,6 +98,9 @@ int Wing::get_button_value(){
 }
 int Wing::get_long_hold_time(){
   return long_hold;
+}
+int Wing::get_short_hold_time(){
+  return short_hold;
 }
 int Wing::get_state(){
   return state;
