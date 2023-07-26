@@ -44,7 +44,13 @@ void Wing::update_motor_values(){
   map_pot_values();
   write_servos();
 }
+void Wing::set_angle(int _aleron, int _slat, int _flap){
+  servo_angle[0] = _aleron;
+  servo_angle[1] = _slat;
+  servo_angle[2] = _flap;
 
+  write_servos();
+}
 //Potentiometers
 void Wing::set_pot_pin(int _aleron_pot_pin, int _slat_pot_pin, int _flap_pot_pin){
   pot_pins[0] = _aleron_pot_pin;

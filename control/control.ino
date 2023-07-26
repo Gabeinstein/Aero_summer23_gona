@@ -1,6 +1,6 @@
 #include "wing.h"
 
-Wing ala = Wing(9,10,11);  //Pines Servo
+Wing ala = Wing(11,10,9);  //Pines Servo
 
 unsigned long *time_interval = new unsigned long[4];
 unsigned long actual_time = 0;
@@ -25,7 +25,6 @@ void setup() {
   for (int i = 0; i < 4; i++){
     time_interval[i] = millis();
   }
-
 }
 
 void loop() {
@@ -51,12 +50,16 @@ void loop() {
   }else if(ala.get_state() == 1){
     // RED state
     ala.RGB_print(0,255,255);
+    ala.set_angle(0,150,25);
+    
   }else if(ala.get_state() == 2){
     // Green state
     ala.RGB_print(255,0,255);
+    ala.set_angle(98,85,98);
   }else if(ala.get_state() == 3){
     // Blue state
     ala.RGB_print(255,255,0);
+    ala.set_angle(72,85,76);
   }
 }
 void states(){

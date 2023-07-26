@@ -27,6 +27,7 @@ public:
   void set_servos();
   void write_servos();
   void update_motor_values();
+  void set_angle(int,int,int);
 
   //Potentiometers
   void set_pot_pin(int,int,int);
